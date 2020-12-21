@@ -1,15 +1,19 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useContext} from 'react'
 import { useLocation } from "react-router-dom"
+import {Store} from "../../store/index"
 import { fetchSelectedData } from "../../apis/index"
 
 const VideoDetail = () => {
+  const {globalState,setGlobalState} = useContext(Store)
   const location = useLocation();
   const setSelectedVideo = async () => {
     const searchParams = new URLSearchParams(location.search)
     const id = searchParams.get("v")
     // console.log("id", id)
     await fetchSelectedData(id).then((res) => {
-      console.log("res",res)
+      console.log("res", res)
+      const item = res.data.items.shift()
+      setGlobalState({ type: "SET_SELECTED",payload: {selected: item}})
     })
   }
   useEffect(() => {
