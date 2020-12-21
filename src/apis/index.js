@@ -1,9 +1,9 @@
 import axios from "axios"
 
-const KEY = "AIzaSyAuH9NSVkEqBObNzteiOuRATpgyqgMW7eg"
+const KEY = "AIzaSyBsseUHRds5ICVkYErMNN6ZuqUHLZSFtpw"
 
 const youtube = axios.create({
-  baseURL: "http://www.googleapis.com/youtube/v3"
+  baseURL: "https://www.googleapis.com/youtube/v3"
 })
 
 export const fetchPopularData = async () => {
