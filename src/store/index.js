@@ -4,8 +4,8 @@ const initialState = {
   popular:[]
 }
 
-const reducer = ({ state, action }) => {
-  switch (action.type) {
+const reducer = ( state, action ) => {
+  switch(action.type){
     case "SET_POPULAR":
       return { popular: action.payload.popular }
     default:
@@ -14,16 +14,15 @@ const reducer = ({ state, action }) => {
 }
 
 export const Store = createContext({
-  grobalState: initialState,
+  globalState: initialState,
   setGlobalState: () => null
 })
 
-const storeProvider = ({children}) => {
+const StoreProvider = ({children}) => {
   const [globalState,setGlobalState] = useReducer(reducer,initialState)
   return (
-    <Store.provider value={{grobalState,setGrobalState}}></Store.provider>
+    <Store.Provider value={{ globalState, setGlobalState }}>{children}</Store.Provider>
   )
 }
 
-export default storeProvider
-
+export default StoreProvider;
