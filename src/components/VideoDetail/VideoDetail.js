@@ -21,9 +21,10 @@ const VideoDetail = () => {
     setSelectedVideo();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
-  return globalState.selected?(
+  return globalState.selected&& globalState.selected.id?(
     <div>
-      <VideoPlay id={globalState.selected.id}/>
+      <VideoPlay id={globalState.selected.id} />
+      <p>{globalState.selected.snippet.title}</p>
     </div>
   ):(<span>No data</span>)
 }
