@@ -21,7 +21,7 @@ const Search = () => {
   }
   useEffect(() => {
     setSearchResult()
-  },[])
+  },[location.search])
   return (
     <Layout>
       <VideoGrid>
