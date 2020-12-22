@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom"
 import { fetchSearchData } from "../apis"
 import { Store } from "../store/index"
 import VideoGrid from "../components/VideoGrid/VideoGrid"
-import VideoGridItem from "../components/VideoGrid/VideoGrid"
+import VideoGridItem from "../components/VideoGridItem/VideoGridItem"
 
 const Search = () => {
   const {globalState,setGlobalState} = useContext(Store)
