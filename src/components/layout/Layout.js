@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from "../header/Header"
 import Style from "./Layout.module.scss"
-
 const layout = ({children}) => {
   return (
     <div className={Style.wrapper}>
